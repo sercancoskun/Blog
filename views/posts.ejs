@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+
+<h1>Posts</h1>
+
+<% blogData.forEach(post => { %>
+    <h1><%= post.entryTitle %></h1>
+    <% let numOfSentences = post.entry.split(". ", 4).join(". ").length %>
+    <p><%= post.entry.slice(0,numOfSentences); %>...</p>
+    <a href="/posts/<%= post.entryTitle %>">Learn More</a>
+<% }); %>
+
+<%- include("partials/footer"); -%>
