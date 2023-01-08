@@ -2,6 +2,7 @@ body{
     font-size: 16px;
     font-family: Verdana;
 }
+
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -55,6 +56,10 @@ ul.breadcrumb li a:hover {
 .active{
     color: forestgreen!important;
     font-weight: bold;
+}
+
+#posts{
+    margin-bottom: 120px;
 }
 
 .footer-padding {

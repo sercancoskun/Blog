@@ -6,11 +6,13 @@
 
 <a href="/compose" class="btn btn-success">Add new post</a>
 
-<% blogData.forEach(post => { %>
-    <h1><%= post.entryTitle %></h1>
-    <% let numOfSentences = post.entry.split(". ", 4).join(". ").length %>
-    <p><%= post.entry.slice(0,numOfSentences); %>...</p>
-    <a href="/posts/<%= post.entryTitle %>">Learn More</a>
-<% }); %>
+<div id="posts">
+    <% blogData.forEach(post => { %>
+        <h1><%= post.entryTitle %></h1>
+        <% let numOfSentences = post.entry.split(". ", 4).join(". ").length %>
+        <p><%= post.entry.slice(0,numOfSentences); %>...</p>
+        <a href="/posts/<%= post.entryTitle %>">Learn More</a>
+    <% }); %>
+</div>
 
 <%- include("partials/footer"); -%>
