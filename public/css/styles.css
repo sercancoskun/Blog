@@ -1,5 +1,6 @@
 body{
     font-size: 16px;
+    font-family: Verdana;
 }
 .container-fluid {
     padding-top: 70px;
@@ -51,6 +52,11 @@ ul.breadcrumb li a:hover {
     color: #1abc9c !important;
 }
 
+.active{
+    color: forestgreen!important;
+    font-weight: bold;
+}
+
 .footer-padding {
 	padding-bottom: 60px;
 }
@@ -69,3 +75,9 @@ ul.breadcrumb li a:hover {
 	font-size: 12px;
   color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    .navbar-nav li {
+      display: inline-block;
+    }
+  }
