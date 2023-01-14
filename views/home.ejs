@@ -1,18 +1,20 @@
 <%- include("partials/header"); -%>
 
-<h1>Home</h1>
+<h1><%= homeData.pageTitle %></h1>
 
-<p><%= homeData %></p>
+<p><%= homeData.pageContent %></p>
 
 <a href="/compose" class="btn btn-success">Add new post</a>
 
 <div id="wrapper">
-    <% blogData.forEach(post => { %>
-        <h1><%= post.entryTitle %></h1>
-        <% let numOfSentences = post.entry.split(". ", 4).join(". ").length %>
-        <p><%= post.entry.slice(0,numOfSentences); %>...</p>
-        <a href="/posts/<%= post.entryTitle %>">Learn More</a>
-    <% }); %>
+    <% if(blogData.length > 0){ blogData.forEach(post => { %>
+        <h1><%= post.postTitle %></h1>
+        <% let numOfSentences = post.postContent.split(". ", 4).join(". ").length %>
+        <p><%= post.postContent.slice(0,numOfSentences); %>...</p>
+        <a href="/posts/<%= post._id %>">Learn More</a>
+    <% }); }else{ %>
+        <p>No post at the moment.</p>
+    <% } %>
 </div>
 
 <%- include("partials/footer"); -%>
